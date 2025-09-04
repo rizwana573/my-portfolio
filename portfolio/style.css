@@ -1,0 +1,83 @@
+@keyframes gradient-move {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradient-move 6s ease infinite;
+}
+#particles-js {
+  width: 100%;
+  height: 100%;
+    position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* keep behind content but clickable */
+  pointer-events: none; /* let content get clicks */
+
+}
+
+#particles-js canvas {
+  /* width: 100% !important;
+  height: 100% !important;
+  display: block; */
+  pointer-events: all;
+}
+
+ .visit-site-1, 
+  .visit-site-2 {
+    color: var(--light);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    z-index: 5;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    width: max-content;
+    background: orangered; 
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: top 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.visit-site-2{
+  background: #FFAE42;  
+}
+.work-section .visit-site-1::after, .work-section .visit-site-2::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg) translate(-50%, 50%);
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    background: inherit;
+}
+.work-section a img{
+    position: relative;
+    z-index:10;
+}
+.work-section a:hover img {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+.work-section a:hover .visit-site-1,  .work-section a:hover .visit-site-2{
+        top: -2em;
+    }
+    .lightMode {
+        background: #fff;
+        color: #000;
+    }
+    .darkMode{
+        background: #111;
+        color: #fff;
+    }
+    .lightMode #my-svg, .lightMode .arrowIcon{
+        fill: #000;
+    }
+    #my-svg, .arrowIcon{
+        fill: #fff;
+    }
